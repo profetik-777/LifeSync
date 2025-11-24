@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: lifesync-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lifesync
+      POSTGRES_PASSWORD: lifesync_password
+      POSTGRES_DB: lifesync
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lifesync"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # LifeSync Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lifesync-app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://lifesync:lifesync_password@postgres:5432/lifesync
+      - PORT=5000
+      - AUTO_MIGRATE=true  # Set to false in production if you want manual migrations
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: sh -c "if [ \"$AUTO_MIGRATE\" = \"true\" ]; then npm run db:push -- --force; fi && npm start"
+
+volumes:
+  postgres_data:
+    driver: local

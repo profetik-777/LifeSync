@@ -8,14 +8,16 @@ Today’s productivity tools are built on outdated assumptions that separate tas
 
 LifeSync's Goal:
 
-What if we had a digital productivity tool that helped us keep insync with life's demands? What if that tool can also help us keep track of all the areas that are important but can sometimes be put forgotten about due to the demands of life? And what if this app actually mapped to reality with how we engage with tasks, reminders, notes, and appointments? That is LifeSync's goal. A productivity web app that merges task management with calendar functionality. Organize your life across seven themed areas and seamlessly bridges tasks, events, and notes in a way that actually makes sense for the modern world. 
+What if we had a digital productivity tool that helped us keep insync with life's demands? What if that tool can also help us keep track of all the areas that are important but sometimes forgotten about due to the demands of life? And what if this app actually mapped to reality with how we engage with tasks, reminders, notes, and appointments? That is LifeSync's goal. A productivity web app that merges task management and notes and fuses it with calendar functionality. 
+
+Organize your life across seven themed areas and seamlessly bridges tasks, events, and notes in a way that actually makes sense for the modern world. 
 
 
 Features
 
 7 Life Areas include: 
 
-Faith, Finance, Fitness, Family, Fortress, Fulfillment, Frivolous
+Faith, Finance, Fitness, Family, Fortress, Fulfillment, Frivolous (add/remove,update life areas and projects as needed)
     
 Task Management: Create, edit, and organize tasks with natural language processing
 Calendar Integration: Drag tasks to calendar slots to schedule them
